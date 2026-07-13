@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DARP Area Division Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="toolbar" aria-label="Grid controls">
+        <div class="group">
+          <label>
+            Rows
+            <input id="rowsInput" type="number" min="2" max="60" value="12">
+          </label>
+          <label>
+            Columns
+            <input id="colsInput" type="number" min="2" max="80" value="16">
+          </label>
+          <label>
+            Robots
+            <input id="robotsInput" type="number" min="1" max="8" value="3">
+          </label>
+          <button id="resizeButton" type="button">Resize</button>
+        </div>
+
+        <div class="group mode-group" aria-label="Edit mode">
+          <button class="mode active" type="button" data-mode="obstacle">Obstacle</button>
+          <button class="mode" type="button" data-mode="robot">Robot</button>
+          <button class="mode" type="button" data-mode="erase">Erase</button>
+        </div>
+
+        <div class="group">
+          <select id="presetSelect" aria-label="Map preset">
+            <option value="open">Open grid</option>
+            <option value="rooms">Rooms</option>
+            <option value="corridor">Corridor</option>
+            <option value="maze">Broken maze</option>
+          </select>
+          <button id="runButton" type="button">Run</button>
+          <button id="clearButton" type="button">Clear</button>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="panel">
+          <div class="stats">
+            <div>
+              <span class="label">Passable</span>
+              <strong id="passableStat">0</strong>
+            </div>
+            <div>
+              <span class="label">Obstacles</span>
+              <strong id="obstacleStat">0</strong>
+            </div>
+            <div>
+              <span class="label">Robots</span>
+              <strong id="robotStat">0</strong>
+            </div>
+          </div>
+          <div id="robotStats" class="robot-stats" aria-live="polite"></div>
+          <div id="status" class="status" role="status"></div>
+        </aside>
+
+        <section class="board-wrap" aria-label="DARP grid">
+          <canvas id="gridCanvas" width="960" height="720"></canvas>
+        </section>
+
+        <aside class="panel map-panel">
+          <label>
+            Map JSON
+            <textarea id="mapJson" spellcheck="false"></textarea>
+          </label>
+          <div class="json-actions">
+            <button id="exportButton" type="button">Export</button>
+            <button id="importButton" type="button">Import</button>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
