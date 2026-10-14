@@ -53,7 +53,8 @@ def get_area_indices(area, value, inv=False, obstacle=-1):
                 mask |= area == v
         mask &= area != obstacle
         return np.concatenate([np.where(mask)]).T
-#Main darp code? 
+
+#Main darp code
 class MultiRobotPathPlanner(DARP):
     def __init__(self, nx, ny, notEqualPortions, initial_positions, portions,
                  obs_pos, visualization, MaxIter=80000, CCvariation=0.01,

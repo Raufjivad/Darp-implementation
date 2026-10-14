@@ -22,14 +22,13 @@ class WorldSetup:
 
 @dataclass(frozen=True)
 class AssignmentMatrixSetup:
-    MetricMatrix: list[list[list[float]]]
-    TilesImportance: list[list[list[float]]]
+    MetricMatrix: list[list[list[float]]] #distance values in matrix
+    TilesImportance: list[list[list[float]]] #global tiles importance
     DesireableAssign: tuple[float, ...]
     termThr: int
     Notiles: int
     MinimumImportance: tuple[float, ...]
     MaximumImportance: tuple[float, ...]
-
 
 def setup_world(
     rows: int,
@@ -144,7 +143,60 @@ def construct_assignment_matrix(
         MaximumImportance=tuple(MaximumImportance),
     )
 
+"""def divisons(
+        
+) -> Divisionlogic:
+    """
 
+def divide_tiles_by_importance(
+    tiles_importance: Sequence[Sequence[Sequence[float]]],
+    desirable_assign: Sequence[float],
+) -> list[list[Cell]]:
+    robot_count = len(tiles_importance)
+    rows = len(tiles_importance[0])
+    cols = len(tiles_importance[0][0])
+    total_tiles = rows * cols
+
+    # 1) Convert desired float counts into integer target counts
+    #    Use floor first, then distribute the remaining tiles by largest fractional parts
+    floor_counts = [int(value) for value in desirable_assign]
+    remaining_slots = total_tiles - sum(floor_counts)
+
+    fractional_parts = [(value - int(value), i) for i, value in enumerate(desirable_assign)]
+    fractional_parts.sort(reverse=True)
+
+    target_counts = floor_counts[:]
+    for _, robot_id in fractional_parts:
+        if remaining_slots <= 0:
+            break
+        target_counts[robot_id] += 1
+        remaining_slots -= 1
+
+    # 2) Keep track of tiles still free
+    remaining_tiles = {(r, c) for r in range(rows) for c in range(cols)}
+    assignments: list[list[Cell]] = [[] for _ in range(robot_count)]
+
+    # 3) For each robot, take the best tiles by importance
+    for robot_id in range(robot_count):
+        needed = target_counts[robot_id]
+        if needed <= 0:
+            continue
+
+        ranked_tiles = []
+        for r in range(rows):
+            for c in range(cols):
+                if (r, c) in remaining_tiles:
+                    score = tiles_importance[robot_id][r][c]
+                    ranked_tiles.append(((r, c), score))
+
+        ranked_tiles.sort(key=lambda item: item[1], reverse=True)
+
+        for (r, c), _ in ranked_tiles[:needed]:
+            assignments[robot_id].append((r, c))
+            remaining_tiles.remove((r, c))
+
+    return assignments
+    
 def validate_portions(portions: Sequence[float], robot_count: int) -> None:
     if len(portions) != robot_count:
         raise ValueError("Portions should be defined for each robot")
@@ -282,3 +334,11 @@ if __name__ == "__main__":
     print_matrix(assignment_setup.MetricMatrix[0])
     print("TilesImportance for robot 0:")
     print_matrix(assignment_setup.TilesImportance[0], precision=4)
+    assignment = divide_tiles_by_importance(
+    tiles_importance=assignment_setup.TilesImportance,
+    desirable_assign=assignment_setup.DesireableAssign,
+)
+for robot_id, cells in enumerate(assignment):
+    print(f"Robot {robot_id}: {len(cells)} tiles")
+    print(cells)
+

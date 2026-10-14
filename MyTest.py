@@ -1,13 +1,21 @@
 from collections import deque
 from dataclasses import dataclass
+from datetime import datetime
+import argparse
+import json
+from math import exp
+from pathlib import Path
+import pygame
 
 from math import sqrt
 from sys import float_info
 from typing import Iterable, Sequence
 
-
+# Value Assignment for different properties of grid
 FREE = -1
 OBSTACLE = -2
+
+# Format Assignment for each type of data in the algorithm
 Cell = tuple[int, int]
 Grid = list[list[int]]
 
@@ -23,13 +31,39 @@ class WorldSetup:
 
 @dataclass(frozen=True)
 class AssignmentMatrixSetup:
-    MetricMatrix: list[list[list[float]]]
+    MetricMatrix: list[list[list[float]]] #3 dimenstional matrix list with decimal number
     TilesImportance: list[list[list[float]]]
-    DesireableAssign: tuple[float, ...]
+    DesireableAssign: tuple[float, ...]  # isnt it better to use list as tuple cannot be changed?
     termThr: int
     Notiles: int
     MinimumImportance: tuple[float, ...]
     MaximumImportance: tuple[float, ...]
+
+#PyGame Setup to present the grid
+pygame.init()
+screen = pygame.display.set_mode((600, 600))
+pygame.display.set_caption("Seedarp")
+
+WHITE = (255, 255, 255)
+BLUE = (0, 102, 204)
+BLACK = (0, 0, 0)
+GRAY = (200, 200, 200)
+PURPLE = (128, 0 ,128)
+
+RECT_WIDTH = 50   # Width of each rectangle
+RECT_HEIGHT = 50  # Height of each rectangle
+GAP = 0          # Space between rectangles
+
+START_X = 50
+START_Y = 50
+ARCHIVE_DIR = Path(__file__).resolve().parent / "run_archive"
+
+
+def initialize_display() -> pygame.Surface:
+    pygame.init()
+    screen = pygame.display.set_mode((600, 600))
+    pygame.display.set_caption("Seedarp")
+    return screen
 
 
 def setup_world(
@@ -75,6 +109,7 @@ def setup_world(
     )
 
 
+
 def construct_assignment_matrix(
     world: WorldSetup,
     portions: Sequence[float] | None = None,
@@ -97,14 +132,14 @@ def construct_assignment_matrix(
     effectiveSize = Notiles - droneNo - len(world.obstacle_positions)
 
     if portions is None:
-        portions = tuple(1 / droneNo for _ in range(droneNo))
+        portions = tuple(1 / droneNo for _ in range(droneNo)) #in this function the portion for each robot is determined
     validate_portions(portions, droneNo)
 
     termThr = 1 if effectiveSize % droneNo != 0 else 0
     DesireableAssign = [0.0 for _ in range(droneNo)]
     MaximumImportance = [0.0 for _ in range(droneNo)]
     MinimumImportance = [float_info.max for _ in range(droneNo)]
-
+#This loop iterates desireable Asigning for each robot
     for robot_id in range(droneNo):
         DesireableAssign[robot_id] = effectiveSize * portions[robot_id]
         if DesireableAssign[robot_id] != int(DesireableAssign[robot_id]) and termThr != 1:
@@ -112,7 +147,7 @@ def construct_assignment_matrix(
 
     MetricMatrix = create_3d_matrix(droneNo, rows, cols, 0.0)
     TilesImportance = create_3d_matrix(droneNo, rows, cols, 0.0)
-
+#loop underneath will get the distance for each tile
     for row in range(rows):
         for col in range(cols):
             tempSum = 0.0
@@ -145,6 +180,190 @@ def construct_assignment_matrix(
         MaximumImportance=tuple(MaximumImportance),
     )
 
+def calculate_balance_costs(
+    assigned_counts: Sequence[int],
+    unoccupied_cell_count: int,
+) -> tuple[tuple[float, ...], float]:
+    """Return each robot's signed balance error and the total squared error."""
+    if not assigned_counts:
+        raise ValueError("At least one robot is required to calculate balance costs")
+    if unoccupied_cell_count < 0:
+        raise ValueError("Unoccupied cell count cannot be negative")
+
+    target_count = unoccupied_cell_count / len(assigned_counts)
+    robot_costs = tuple(
+        0.5 * (assigned_count - target_count)
+        for assigned_count in assigned_counts
+    )
+    total_cost = sum(cost * cost for cost in robot_costs)
+    return robot_costs, total_cost
+
+
+def divide_tiles_by_importance(
+    tiles_importance: Sequence[Sequence[Sequence[float]]],
+    desirable_assign: Sequence[float],
+    robot_positions: Sequence[Cell] = (),
+    obstacle_positions: Sequence[Cell] = (),
+    metric_matrix: Sequence[Sequence[Sequence[float]]] | None = None,
+    metric_weights: Sequence[float] | None = None,
+    distance_weight: float = 1.0,
+) -> list[list[Cell]]:
+    robot_count = len(tiles_importance)
+    rows = len(tiles_importance[0])
+    cols = len(tiles_importance[0][0])
+    if len(desirable_assign) != robot_count:
+        raise ValueError("A desirable assignment value must be provided for each robot")
+    if metric_weights is None:
+        metric_weights = (1.0,) * robot_count
+    if len(metric_weights) != robot_count:
+        raise ValueError("A metric weight must be provided for each robot")
+    if any(weight <= 0 for weight in metric_weights):
+        raise ValueError("Metric weights must be positive")
+    if distance_weight < 0:
+        raise ValueError("Distance weight cannot be negative")
+
+    obstacle_set = set(obstacle_positions)
+    passable_tiles = {
+        (r, c)
+        for r in range(rows)
+        for c in range(cols)
+        if (r, c) not in obstacle_set
+    }
+    max_distance = max(
+        (value for robot_matrix in metric_matrix or () for row in robot_matrix for value in row),
+        default=1.0,
+    ) or 1.0
+
+    assignments: list[list[Cell]] = [[] for _ in range(robot_count)]
+    assigned_tiles: set[Cell] = set()
+
+    def neighbors(cell: Cell) -> Iterable[Cell]:
+        row, col = cell
+        for next_row, next_col in ((row - 1, col), (row + 1, col), (row, col - 1), (row, col + 1)):
+            if 0 <= next_row < rows and 0 <= next_col < cols:
+                yield next_row, next_col
+
+    for robot_id, start in enumerate(robot_positions):
+        assignments[robot_id].append(start)
+        assigned_tiles.add(start)
+
+    while len(assigned_tiles) < len(passable_tiles):
+        frontier: list[tuple[float, float, float, int, Cell]] = []
+        for robot_id, cells in enumerate(assignments):
+            for owned_cell in cells:
+                for candidate in neighbors(owned_cell):
+                    if candidate in obstacle_set or candidate in assigned_tiles:
+                        continue
+                    row, col = candidate
+                    distance_cost = metric_matrix[robot_id][row][col] if metric_matrix is not None else 0.0
+                    importance_cost = -tiles_importance[robot_id][row][col]
+                    projected_counts = [len(robot_cells) for robot_cells in assignments]
+                    projected_counts[robot_id] += 1
+                    _, balance_cost = calculate_balance_costs(projected_counts, len(passable_tiles))
+                    normalized_distance = distance_cost / max_distance
+                    combined_cost = balance_cost + distance_weight * metric_weights[robot_id] * normalized_distance
+                    frontier.append((combined_cost, balance_cost, importance_cost, robot_id, candidate))
+
+        if not frontier:
+            raise ValueError("Could not reach every passable tile from the robot starting positions")
+
+        _, _, _, robot_id, cell = min(frontier)
+        assignments[robot_id].append(cell)
+        assigned_tiles.add(cell)
+
+    if sum(len(cells) for cells in assignments) != len(passable_tiles):
+        raise ValueError(
+            f"Assignment did not cover all passable tiles: expected {len(passable_tiles)}, "
+            f"got {sum(len(cells) for cells in assignments)}"
+        )
+
+    return assignments
+
+
+def tune_metric_weights(
+    tiles_importance: Sequence[Sequence[Sequence[float]]],
+    desirable_assign: Sequence[float],
+    robot_positions: Sequence[Cell],
+    obstacle_positions: Sequence[Cell],
+    metric_matrix: Sequence[Sequence[Sequence[float]]],
+    initial_weights: Sequence[float] | None = None,
+    learning_rate: float = 2.0,
+    max_iterations: int = 30,
+    minimum_weight: float = 0.1,
+    maximum_weight: float = 10.0,
+) -> tuple[list[list[Cell]], tuple[float, ...], list[dict[str, object]]]:
+    """Tune distance multipliers using bounded, damped balance feedback."""
+    robot_count = len(robot_positions)
+    if robot_count == 0:
+        raise ValueError("At least one robot is required to tune metric weights")
+    if learning_rate <= 0:
+        raise ValueError("Learning rate must be positive")
+    if max_iterations <= 0:
+        raise ValueError("Maximum iterations must be positive")
+    if minimum_weight <= 0 or maximum_weight < minimum_weight:
+        raise ValueError("Metric weight bounds must satisfy 0 < minimum <= maximum")
+
+    weights = list(initial_weights or (1.0,) * robot_count)
+    if len(weights) != robot_count:
+        raise ValueError("An initial metric weight must be provided for each robot")
+    if any(weight <= 0 for weight in weights):
+        raise ValueError("Initial metric weights must be positive")
+
+    total_passable = len({
+        (row, col)
+        for row in range(len(tiles_importance[0]))
+        for col in range(len(tiles_importance[0][0]))
+        if (row, col) not in set(obstacle_positions)
+    })
+    target_count = total_passable / robot_count
+    base_count, remainder = divmod(total_passable, robot_count)
+    ideal_counts = [base_count + (robot_id < remainder) for robot_id in range(robot_count)]
+    _, minimum_objective = calculate_balance_costs(ideal_counts, total_passable)
+
+    best_assignment: list[list[Cell]] = []
+    best_weights = tuple(weights)
+    best_objective = float("inf")
+    iteration_history: list[dict[str, object]] = []
+
+    for iteration in range(max_iterations):
+        assignment = divide_tiles_by_importance(
+            tiles_importance=tiles_importance,
+            desirable_assign=desirable_assign,
+            robot_positions=robot_positions,
+            obstacle_positions=obstacle_positions,
+            metric_matrix=metric_matrix,
+            metric_weights=weights,
+        )
+        counts = [len(cells) for cells in assignment]
+        balance_j, objective = calculate_balance_costs(counts, total_passable)
+        iteration_history.append({
+            "iteration": iteration,
+            "metric_weights": list(weights),
+            "region_sizes": counts,
+            "balance_j": list(balance_j),
+            "balance_objective": objective,
+        })
+
+        if objective < best_objective:
+            best_assignment = assignment
+            best_weights = tuple(weights)
+            best_objective = objective
+
+        if objective <= minimum_objective + 1e-12:
+            break
+
+        weights = [
+            min(
+                maximum_weight,
+                max(
+                    minimum_weight,
+                    weight * exp(learning_rate * (count - target_count) / target_count),
+                ),
+            )
+            for weight, count in zip(weights, counts)
+        ]
+
+    return best_assignment, best_weights, iteration_history
 
 def validate_portions(portions: Sequence[float], robot_count: int) -> None:
     if len(portions) != robot_count:
@@ -168,7 +387,7 @@ def validate_grid_size(rows: int, cols: int) -> None:
     if rows <= 0 or cols <= 0:
         raise ValueError("Grid dimensions must be positive")
 
-
+#convert a number into grid position following "Cell" format
 def to_cell(position: int | Cell, cols: int) -> Cell:
     if isinstance(position, int):
         return position // cols, position % cols
@@ -189,6 +408,7 @@ def validate_obstacles_inside_map(rows: int, cols: int, obstacles: Sequence[Cell
         validate_cell_inside_map(rows, cols, obstacle, "Obstacle")
 
 
+#this funcation make sure cell choosen are inside the grid
 def validate_cell_inside_map(rows: int, cols: int, cell: Cell, label: str) -> None:
     row, col = cell
     if row < 0 or row >= rows or col < 0 or col >= cols:
@@ -218,7 +438,7 @@ def create_grid_env(rows: int, cols: int, robots: Sequence[Cell], obstacles: Seq
 
     return grid_env
 
-
+#make sures there's no area which is not reacheable
 def validate_free_space_connected(grid_env: Grid, start: Cell) -> None:
     rows = len(grid_env)
     cols = len(grid_env[0])
@@ -256,25 +476,511 @@ def print_grid(grid_env: Grid) -> None:
     for row in grid_env:
         print(" ".join(f"{value:2d}" for value in row))
 
-
+#2 dimensional list of decmial number float 
 def print_matrix(matrix: list[list[float]], precision: int = 2) -> None:
     for row in matrix:
         print(" ".join(f"{value:6.{precision}f}" for value in row))
 
+def nodes(assignments: Sequence[Sequence[Cell]]) -> list[dict[Cell, set[Cell]]]:
+    """Build a 4-connected adjacency graph for each robot's assigned cells."""
+    region_graphs: list[dict[Cell, set[Cell]]] = []
+    for robot_cells in assignments:
+        region = set(robot_cells)
+        graph = {
+            cell: {
+                neighbor
+                for neighbor in (
+                    (cell[0] - 1, cell[1]),
+                    (cell[0] + 1, cell[1]),
+                    (cell[0], cell[1] - 1),
+                    (cell[0], cell[1] + 1),
+                )
+                if neighbor in region
+            }
+            for cell in region
+        }
+        region_graphs.append(graph)
+    return region_graphs
 
-if __name__ == "__main__":
+
+def build_spanning_trees(
+    region_graphs: Sequence[dict[Cell, set[Cell]]],
+    robot_positions: Sequence[Cell],
+) -> list[dict[Cell, set[Cell]]]:
+    """Build a deterministic 4-connected spanning tree for each robot region."""
+    if len(region_graphs) != len(robot_positions):
+        raise ValueError("A robot position must be provided for each region graph")
+
+    spanning_trees: list[dict[Cell, set[Cell]]] = []
+    for graph, start in zip(region_graphs, robot_positions):
+        if start not in graph:
+            raise ValueError(f"Robot start {start} is not in its assigned region")
+
+        tree = {cell: set() for cell in graph}
+        visited = {start}
+        stack = [start]
+        while stack:
+            cell = stack[-1]
+            unvisited_neighbors = sorted(graph[cell] - visited)
+            if not unvisited_neighbors:
+                stack.pop()
+                continue
+
+            neighbor = unvisited_neighbors[0]
+            visited.add(neighbor)
+            tree[cell].add(neighbor)
+            tree[neighbor].add(cell)
+            stack.append(neighbor)
+
+        if visited != set(graph):
+            raise ValueError(f"Robot region starting at {start} is disconnected")
+        spanning_trees.append(tree)
+
+    return spanning_trees
+
+
+def build_coverage_paths(
+    spanning_trees: Sequence[dict[Cell, set[Cell]]],
+    robot_positions: Sequence[Cell],
+) -> list[list[Cell]]:
+    """Expand each tile tree into a 2x2-cell tree and return its DFS coverage walk.
+
+    Fine-grid coordinates use two coordinates per original tile. Each robot
+    starts at the top-left fine cell of its assigned starting tile.
+    """
+    if len(spanning_trees) != len(robot_positions):
+        raise ValueError("A robot position must be provided for each spanning tree")
+
+    coverage_paths: list[list[Cell]] = []
+    for tile_tree, tile_start in zip(spanning_trees, robot_positions):
+        if tile_start not in tile_tree:
+            raise ValueError(f"Robot start {tile_start} is not in its spanning tree")
+
+        fine_tree: dict[Cell, set[Cell]] = {}
+        for row, col in tile_tree:
+            top = row * 2
+            left = col * 2
+            fine_cells = (
+                (top, left),
+                (top, left + 1),
+                (top + 1, left + 1),
+                (top + 1, left),
+            )
+            for fine_cell in fine_cells:
+                fine_tree[fine_cell] = set()
+            for first, second in zip(fine_cells, fine_cells[1:]):
+                fine_tree[first].add(second)
+                fine_tree[second].add(first)
+
+        for tile, neighbors in tile_tree.items():
+            row, col = tile
+            for neighbor in neighbors:
+                if tile >= neighbor:
+                    continue
+                next_row, next_col = neighbor
+                if next_row == row and next_col == col + 1:
+                    first, second = (row * 2, col * 2 + 1), (row * 2, col * 2 + 2)
+                elif next_row == row and next_col == col - 1:
+                    first, second = (row * 2, col * 2), (row * 2, col * 2 - 1)
+                elif next_row == row + 1 and next_col == col:
+                    first, second = (row * 2 + 1, col * 2), (row * 2 + 2, col * 2)
+                elif next_row == row - 1 and next_col == col:
+                    first, second = (row * 2, col * 2), (row * 2 - 1, col * 2)
+                else:
+                    raise ValueError(f"Spanning tree contains a non-adjacent edge: {tile}, {neighbor}")
+                fine_tree[first].add(second)
+                fine_tree[second].add(first)
+
+        fine_start = (tile_start[0] * 2, tile_start[1] * 2)
+        path = [fine_start]
+        visited = {fine_start}
+        stack = [(fine_start, iter(sorted(fine_tree[fine_start])))]
+        while stack:
+            cell, neighbors = stack[-1]
+            next_cell = next((candidate for candidate in neighbors if candidate not in visited), None)
+            if next_cell is None:
+                stack.pop()
+                if stack:
+                    path.append(stack[-1][0])
+                continue
+
+            visited.add(next_cell)
+            path.append(next_cell)
+            stack.append((next_cell, iter(sorted(fine_tree[next_cell]))))
+
+        if visited != set(fine_tree):
+            raise ValueError(f"Expanded coverage tree for robot at {tile_start} is disconnected")
+        coverage_paths.append(path)
+
+    return coverage_paths
+
+
+def present_stc_results(
+    world: WorldSetup,
+    assignments: Sequence[Sequence[Cell]],
+    spanning_trees: Sequence[dict[Cell, set[Cell]]],
+    coverage_paths: Sequence[Sequence[Cell]],
+    assignment_colors: Sequence[tuple[int, int, int]],
+) -> pygame.Surface:
+    """Display tile-level spanning trees beside fine-grid coverage routes."""
+    pygame.init()
+    maximum_panel_size = 440
+    coarse_cell_size = max(4, min(44, maximum_panel_size // max(world.rows, world.cols)))
+    fine_cell_size = max(2, coarse_cell_size // 2)
+    coarse_cell_size = fine_cell_size * 2
+    panel_width = world.cols * coarse_cell_size
+    panel_height = world.rows * coarse_cell_size
+    margin = 24
+    header_height = 78
+    footer_height = 64
+    screen = pygame.display.set_mode((margin * 3 + panel_width * 2, header_height + panel_height + footer_height))
+    pygame.display.set_caption("Spanning Trees and Coverage Paths")
+    screen.fill(WHITE)
+
+    title_font = pygame.font.SysFont("arial", 23, bold=True)
+    panel_font = pygame.font.SysFont("arial", 17, bold=True)
+    detail_font = pygame.font.SysFont("arial", 13)
+    node_font = pygame.font.SysFont("arial", max(10, fine_cell_size // 2), bold=True)
+    tree_start_color = (255, 230, 80)
+    path_colors = [(255, 255, 255), (0, 255, 255), (255, 0, 220), (255, 235, 0)]
+    tree_left = margin
+    path_left = margin * 2 + panel_width
+    grid_top = header_height
+
+    title = title_font.render("Spanning Trees + Coverage Paths", True, BLACK)
+    screen.blit(title, (margin, 16))
+    screen.blit(panel_font.render("TREE ON ASSIGNED TILES", True, BLACK), (tree_left, 52))
+    screen.blit(panel_font.render("2x2 COVERAGE ROUTES", True, BLACK), (path_left, 52))
+
+    assignment_by_cell = {
+        cell: robot_id
+        for robot_id, cells in enumerate(assignments)
+        for cell in cells
+    }
+    robot_starts = {cell: robot_id for robot_id, cell in enumerate(world.robot_positions)}
+
+    for row in range(world.rows):
+        for col in range(world.cols):
+            cell = (row, col)
+            robot_id = assignment_by_cell.get(cell)
+            if world.grid_env[row][col] == OBSTACLE:
+                color = BLACK
+            elif robot_id is None:
+                color = GRAY
+            else:
+                color = assignment_colors[robot_id % len(assignment_colors)]
+            if cell in robot_starts:
+                color = tuple(max(0, channel - 50) for channel in color)
+            rect = pygame.Rect(
+                tree_left + col * coarse_cell_size,
+                grid_top + row * coarse_cell_size,
+                coarse_cell_size,
+                coarse_cell_size,
+            )
+            pygame.draw.rect(screen, color, rect)
+            pygame.draw.rect(screen, BLACK, rect, 1)
+
+    for robot_id, tree in enumerate(spanning_trees):
+        for cell, neighbors in tree.items():
+            row, col = cell
+            center = (
+                tree_left + col * coarse_cell_size + coarse_cell_size // 2,
+                grid_top + row * coarse_cell_size + coarse_cell_size // 2,
+            )
+            for neighbor in neighbors:
+                if cell >= neighbor:
+                    continue
+                next_row, next_col = neighbor
+                next_center = (
+                    tree_left + next_col * coarse_cell_size + coarse_cell_size // 2,
+                    grid_top + next_row * coarse_cell_size + coarse_cell_size // 2,
+                )
+                pygame.draw.line(screen, BLACK, center, next_center, max(5, coarse_cell_size // 5))
+                pygame.draw.line(screen, (255, 255, 255), center, next_center, max(2, coarse_cell_size // 10))
+
+        start = world.robot_positions[robot_id]
+        start_center = (
+            tree_left + start[1] * coarse_cell_size + coarse_cell_size // 2,
+            grid_top + start[0] * coarse_cell_size + coarse_cell_size // 2,
+        )
+        pygame.draw.circle(screen, BLACK, start_center, max(9, coarse_cell_size // 3))
+        pygame.draw.circle(screen, tree_start_color, start_center, max(7, coarse_cell_size // 3 - 2))
+        label = node_font.render(f"R{robot_id}", True, BLACK)
+        screen.blit(label, label.get_rect(center=start_center))
+
+    for row in range(world.rows * 2):
+        for col in range(world.cols * 2):
+            coarse_cell = (row // 2, col // 2)
+            robot_id = assignment_by_cell.get(coarse_cell)
+            if world.grid_env[coarse_cell[0]][coarse_cell[1]] == OBSTACLE:
+                color = BLACK
+            elif robot_id is None:
+                color = GRAY
+            else:
+                color = assignment_colors[robot_id % len(assignment_colors)]
+            if coarse_cell in robot_starts:
+                color = tuple(max(0, channel - 50) for channel in color)
+            rect = pygame.Rect(
+                path_left + col * fine_cell_size,
+                grid_top + row * fine_cell_size,
+                fine_cell_size,
+                fine_cell_size,
+            )
+            pygame.draw.rect(screen, color, rect)
+            pygame.draw.rect(screen, BLACK, rect, 1)
+
+    for row in range(world.rows + 1):
+        y = grid_top + row * coarse_cell_size
+        pygame.draw.line(screen, BLACK, (path_left, y), (path_left + panel_width, y), 2)
+    for col in range(world.cols + 1):
+        x = path_left + col * coarse_cell_size
+        pygame.draw.line(screen, BLACK, (x, grid_top), (x, grid_top + panel_height), 2)
+
+    for robot_id, path in enumerate(coverage_paths):
+        points = [
+            (
+                path_left + col * fine_cell_size + fine_cell_size // 2,
+                grid_top + row * fine_cell_size + fine_cell_size // 2,
+            )
+            for row, col in path
+        ]
+        if len(points) > 1:
+            pygame.draw.lines(screen, BLACK, False, points, max(5, fine_cell_size // 3))
+            pygame.draw.lines(
+                screen,
+                path_colors[robot_id % len(path_colors)],
+                False,
+                points,
+                max(2, fine_cell_size // 7),
+            )
+        if points:
+            start = points[0]
+            pygame.draw.circle(screen, BLACK, start, max(8, fine_cell_size // 2))
+            pygame.draw.circle(screen, tree_start_color, start, max(6, fine_cell_size // 2 - 2))
+            label = node_font.render(f"R{robot_id}", True, BLACK)
+            screen.blit(label, label.get_rect(center=start))
+
+    for robot_id, path in enumerate(coverage_paths):
+        detail = detail_font.render(
+            f"R{robot_id}: {len(set(path))} cells, {len(path)} steps",
+            True,
+            BLACK,
+        )
+        screen.blit(detail, (path_left, grid_top + panel_height + 12 + robot_id * 16))
+
+    pygame.display.flip()
+    return screen
+
+
+
+def archive_run_snapshot(
+    world: WorldSetup,
+    assignment_setup: AssignmentMatrixSetup,
+    assignment: Sequence[Sequence[Cell]],
+    metric_weights: Sequence[float] | None = None,
+    tuning_history: Sequence[dict[str, object]] = (),
+) -> Path:
+    ARCHIVE_DIR.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
+    if metric_weights is None:
+        metric_weights = (1.0,) * len(world.robot_positions)
+    balance_j, balance_objective = calculate_balance_costs(
+        [len(cells) for cells in assignment],
+        world.rows * world.cols - len(world.obstacle_positions),
+    )
+
+    snapshot = {
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
+        "rows": world.rows,
+        "cols": world.cols,
+        "robot_positions": list(world.robot_positions),
+        "obstacle_positions": list(world.obstacle_positions),
+        "desireable_assign": list(assignment_setup.DesireableAssign),
+        "term_thr": assignment_setup.termThr,
+        "metric_matrix": assignment_setup.MetricMatrix,
+        "tiles_importance": assignment_setup.TilesImportance,
+        "assignment": [list(cells) for cells in assignment],
+        "metric_weights": list(metric_weights),
+        "tuning_history": list(tuning_history),
+        "balance_j": list(balance_j),
+        "balance_objective": balance_objective,
+    }
+
+    run_file = ARCHIVE_DIR / f"run_{timestamp}.json"
+    run_file.write_text(json.dumps(snapshot, indent=2), encoding="utf-8")
+
+    history_file = ARCHIVE_DIR / "history.json"
+    if history_file.exists():
+        try:
+            history = json.loads(history_file.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            history = []
+    else:
+        history = []
+
+    history.append({
+        "timestamp": snapshot["timestamp"],
+        "run_file": run_file.name,
+        "rows": world.rows,
+        "cols": world.cols,
+        "robot_positions": list(world.robot_positions),
+        "obstacle_positions": list(world.obstacle_positions),
+        "desireable_assign": list(assignment_setup.DesireableAssign),
+        "term_thr": assignment_setup.termThr,
+        "metric_weights": list(metric_weights),
+        "tuning_iterations": len(tuning_history),
+        "balance_j": list(balance_j),
+        "balance_objective": balance_objective,
+    })
+    history_file.write_text(json.dumps(history, indent=2), encoding="utf-8")
+    return run_file
+
+
+def load_archived_runs() -> list[dict[str, object]]:
+    run_files = sorted(ARCHIVE_DIR.glob("run_*.json"), reverse=True)
+    snapshots = []
+    for run_file in run_files:
+        try:
+            snapshot = json.loads(run_file.read_text(encoding="utf-8"))
+        except (OSError, json.JSONDecodeError):
+            continue
+        if all(key in snapshot for key in ("rows", "cols", "robot_positions", "obstacle_positions", "assignment")):
+            snapshot["_file_name"] = run_file.name
+            snapshots.append(snapshot)
+    return snapshots
+
+
+def show_archive_viewer() -> None:
+    snapshots = load_archived_runs()
+    if not snapshots:
+        raise FileNotFoundError(f"No readable run snapshots found in {ARCHIVE_DIR}")
+
+    pygame.init()
+    index = 0
+    cell_size = 50
+    margin = 24
+    footer_height = 76
+    title_height = 54
+    screen: pygame.Surface | None = None
+    fonts = {
+        "title": pygame.font.SysFont("arial", 22, bold=True),
+        "footer": pygame.font.SysFont("arial", 17),
+        "metric": pygame.font.SysFont("arial", 10),
+    }
+    assignment_colors = [
+        (0, 102, 204),
+        (34, 139, 34),
+        (255, 140, 0),
+        (128, 0, 128),
+        (220, 20, 60),
+    ]
+
+    def draw_snapshot() -> None:
+        nonlocal screen
+        snapshot = snapshots[index]
+        rows = int(snapshot["rows"])
+        cols = int(snapshot["cols"])
+        grid_width = cols * cell_size
+        grid_height = rows * cell_size
+        window_width = max(480, grid_width + margin * 2)
+        window_height = grid_height + title_height + footer_height + margin
+        screen = pygame.display.set_mode((window_width, window_height))
+        pygame.display.set_caption(f"Run archive: {snapshot['_file_name']}")
+        screen.fill(WHITE)
+
+        title = fonts["title"].render(str(snapshot.get("timestamp", snapshot["_file_name"])), True, BLACK)
+        screen.blit(title, (margin, 12))
+
+        obstacles = {tuple(cell) for cell in snapshot["obstacle_positions"]}
+        robot_positions = [tuple(cell) for cell in snapshot["robot_positions"]]
+        assignment = [
+            {tuple(cell) for cell in robot_cells}
+            for robot_cells in snapshot["assignment"]
+        ]
+        metric_matrix = snapshot.get("metric_matrix")
+        robot_starts = {cell: robot_id for robot_id, cell in enumerate(robot_positions)}
+        assignment_by_cell = {
+            cell: robot_id
+            for robot_id, cells in enumerate(assignment)
+            for cell in cells
+        }
+        grid_top = title_height
+
+        for row in range(rows):
+            for col in range(cols):
+                cell = (row, col)
+                x = margin + col * cell_size
+                y = grid_top + row * cell_size
+                rect = pygame.Rect(x, y, cell_size, cell_size)
+                robot_id = robot_starts.get(cell, assignment_by_cell.get(cell))
+                if cell in obstacles:
+                    color = BLACK
+                elif robot_id is not None:
+                    base_color = assignment_colors[robot_id % len(assignment_colors)]
+                    color = (
+                        tuple(max(0, channel - 50) for channel in base_color)
+                        if cell in robot_starts
+                        else base_color
+                    )
+                else:
+                    color = GRAY
+                pygame.draw.rect(screen, color, rect)
+                pygame.draw.rect(screen, BLACK, rect, 1)
+
+                if metric_matrix is not None and cell not in obstacles:
+                    for robot_id in range(min(len(robot_positions), len(metric_matrix))):
+                        metric = metric_matrix[robot_id][row][col]
+                        label = fonts["metric"].render(f"{metric:.1f}", True, BLACK)
+                        label_y = y + 3 + robot_id * 11
+                        if label_y + label.get_height() > y + cell_size:
+                            break
+                        screen.blit(label, (x + 3, label_y))
+
+        balance = snapshot.get("balance_objective")
+        balance_text = f"Balance objective: {float(balance):.3f}" if balance is not None else "Balance objective: unavailable"
+        footer = fonts["footer"].render(
+            f"{index + 1}/{len(snapshots)}  {snapshot['_file_name']}    {balance_text}    Left/Right: browse    Esc: close",
+            True,
+            BLACK,
+        )
+        screen.blit(footer, (margin, grid_top + grid_height + 16))
+        pygame.display.flip()
+
+    draw_snapshot()
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            elif event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    running = False
+                elif event.key in (pygame.K_RIGHT, pygame.K_PAGEDOWN):
+                    index = (index + 1) % len(snapshots)
+                    draw_snapshot()
+                elif event.key in (pygame.K_LEFT, pygame.K_PAGEUP):
+                    index = (index - 1) % len(snapshots)
+                    draw_snapshot()
+
+    pygame.quit()
+
+
+def run_simulation() -> None:
+    initial_metric_weights = (1.0, 1.0, 1.0)
     world = setup_world(
-        rows=5,
-        cols=7,
-        robot_initial_positions=[0, 6, 34],
-        obstacle_positions=[10, 11, 17, 24],
+        rows=10,
+        cols=10,
+        robot_initial_positions=[0, 8, 65],
+        obstacle_positions=[41, 42, 43, 45, 46, 47, 48, 49],
     )
 
     print("Grid size:", world.rows, "x", world.cols)
     print("Robots:", world.robot_positions)
+    print("Initial metric weights:", initial_metric_weights)
     print("Obstacles:", world.obstacle_positions)
     print("GridEnv:")
     print_grid(world.grid_env)
+
 
     assignment_setup = construct_assignment_matrix(world)
     print("\ntermThr:", assignment_setup.termThr)
@@ -283,3 +989,76 @@ if __name__ == "__main__":
     print_matrix(assignment_setup.MetricMatrix[0])
     print("TilesImportance for robot 0:")
     print_matrix(assignment_setup.TilesImportance[0], precision=4)
+    print("TilesImportance for robot 1:")
+    print_matrix(assignment_setup.TilesImportance[1], precision=4)
+    assignment, metric_weights, tuning_history = tune_metric_weights(
+        tiles_importance=assignment_setup.TilesImportance,
+        desirable_assign=assignment_setup.DesireableAssign,
+        robot_positions=world.robot_positions,
+        obstacle_positions=world.obstacle_positions,
+        metric_matrix=assignment_setup.MetricMatrix,
+        initial_weights=initial_metric_weights,
+        learning_rate=2.0,
+        max_iterations=30,
+    )
+    region_graphs = nodes(assignment)
+    spanning_trees = build_spanning_trees(region_graphs, world.robot_positions)
+    coverage_paths = build_coverage_paths(spanning_trees, world.robot_positions)
+    for robot_id, (graph, tree, path) in enumerate(zip(region_graphs, spanning_trees, coverage_paths)):
+        edge_count = sum(len(neighbors) for neighbors in graph.values()) // 2
+        tree_edges = sum(len(neighbors) for neighbors in tree.values()) // 2
+        print(
+            f"Robot {robot_id}: graph={len(graph)} tiles/{edge_count} edges, "
+            f"tree={tree_edges} edges, coverage={len(set(path))} fine cells/"
+            f"{len(path)} steps"
+        )
+    for iteration in tuning_history:
+        print(
+            f"Tuning iteration {iteration['iteration']}: "
+            f"sizes={iteration['region_sizes']}, "
+            f"objective={iteration['balance_objective']:.4f}, "
+            f"weights={iteration['metric_weights']}"
+        )
+    print("Selected metric weights:", metric_weights)
+    for robot_id, cells in enumerate(assignment):
+        print(f"Robot {robot_id}: {len(cells)} tiles")
+        print(cells)
+    balance_j, balance_objective = calculate_balance_costs(
+        [len(cells) for cells in assignment],
+        world.rows * world.cols - len(world.obstacle_positions),
+    )
+    print("Balance J per robot:", balance_j)
+    print("Total squared balance objective:", balance_objective)
+
+    archive_run_snapshot(world, assignment_setup, assignment, metric_weights, tuning_history)
+
+    assignment_colors = [
+        (0, 102, 204),
+        (34, 139, 34),
+        (255, 140, 0),
+        (128, 0, 128),
+        (220, 20, 60),
+    ]
+    present_stc_results(world, assignment, spanning_trees, coverage_paths, assignment_colors)
+
+    running = True
+    while running:
+        event = pygame.event.wait()
+        if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+            running = False
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--view-archive",
+        action="store_true",
+        help="Browse archived runs in Pygame",
+    )
+    args = parser.parse_args()
+    if args.view_archive:
+        show_archive_viewer()
+    else:
+        run_simulation()
