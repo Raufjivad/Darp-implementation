@@ -2837,5 +2837,6144 @@
       3.666666666666666
     ],
     "balance_objective": 28.166666666666664
+  },
+  {
+    "timestamp": "2026-10-14T18:01:59",
+    "run_file": "run_20261014_180159_553355.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      5.569979114815239,
+      0.1,
+      10.0
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      0.16666666666666607,
+      -3.833333333333334,
+      3.666666666666666
+    ],
+    "balance_objective": 28.166666666666664
+  },
+  {
+    "timestamp": "2026-10-14T18:07:25",
+    "run_file": "run_20261014_180725_937456.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      5.569979114815239,
+      0.1,
+      10.0
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      0.16666666666666607,
+      -3.833333333333334,
+      3.666666666666666
+    ],
+    "balance_objective": 28.166666666666664
+  },
+  {
+    "timestamp": "2026-10-14T18:07:43",
+    "run_file": "run_20261014_180743_910805.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        8,
+        4
+      ]
+    ],
+    "desireable_assign": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "balance_objective": 0.0
+  },
+  {
+    "timestamp": "2026-10-14T18:08:11",
+    "run_file": "run_20261014_180811_358772.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        9,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        4,
+        1
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ]
+    ],
+    "desireable_assign": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      0.3339465951506876,
+      1.7871910853927189,
+      1.6755291607610394
+    ],
+    "tuning_iterations": 6,
+    "balance_j": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "balance_objective": 0.0
+  },
+  {
+    "timestamp": "2026-10-14T18:08:56",
+    "run_file": "run_20261014_180856_133203.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      0.20014850716070076,
+      1.6132662805678397,
+      3.097002730371004
+    ],
+    "tuning_iterations": 14,
+    "balance_j": [
+      -0.3333333333333339,
+      0.16666666666666607,
+      0.16666666666666607
+    ],
+    "balance_objective": 0.16666666666666669
+  },
+  {
+    "timestamp": "2026-10-14T18:10:09",
+    "run_file": "run_20261014_181009_478857.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        9
+      ],
+      [
+        9,
+        0
+      ],
+      [
+        4,
+        5
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        8
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        8,
+        1
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.16666666666666607,
+      0.16666666666666607,
+      -0.3333333333333339
+    ],
+    "balance_objective": 0.16666666666666669
+  },
+  {
+    "timestamp": "2026-10-14T18:10:54",
+    "run_file": "run_20261014_181054_152155.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        6,
+        5
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      -0.3333333333333339,
+      0.16666666666666607,
+      0.16666666666666607
+    ],
+    "balance_objective": 0.16666666666666669
+  },
+  {
+    "timestamp": "2026-10-14T18:12:07",
+    "run_file": "run_20261014_181207_112928.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      30.333333333333332,
+      30.333333333333332,
+      30.333333333333332
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.8281727579644516,
+      0.1,
+      6.232560440753209
+    ],
+    "tuning_iterations": 14,
+    "balance_j": [
+      -0.16666666666666607,
+      -0.16666666666666607,
+      0.3333333333333339
+    ],
+    "balance_objective": 0.16666666666666669
+  },
+  {
+    "timestamp": "2026-10-14T18:14:36",
+    "run_file": "run_20261014_181436_784838.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      6.08880362242414,
+      0.1,
+      7.881483353878152
+    ],
+    "tuning_iterations": 18,
+    "balance_j": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "balance_objective": 0.0
+  },
+  {
+    "timestamp": "2026-10-16T14:28:23",
+    "run_file": "run_20261016_142823_998057.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      6.08880362242414,
+      0.1,
+      7.881483353878152
+    ],
+    "tuning_iterations": 18,
+    "balance_j": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "balance_objective": 0.0
+  },
+  {
+    "timestamp": "2026-10-16T14:57:01",
+    "run_file": "run_20261016_145701_096685.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      6.08880362242414,
+      0.1,
+      7.881483353878152
+    ],
+    "tuning_iterations": 18,
+    "balance_j": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.007901708013378084,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 1,
+          "planning_seconds": 0.0030759999935980886,
+          "turns": 34,
+          "coverage_cells": 124,
+          "moves": 124
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0023478340008296072,
+          "turns": 28,
+          "coverage_cells": 124,
+          "moves": 124
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.002445791003992781,
+          "turns": 16,
+          "coverage_cells": 124,
+          "moves": 124
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T15:54:43",
+    "run_file": "run_20261016_155443_130746.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      30.0,
+      30.0,
+      30.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      2.9944907794276734,
+      0.1,
+      3.406912485290393
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      0.5,
+      -1.0,
+      0.5
+    ],
+    "balance_objective": 1.5,
+    "stc_metrics": {
+      "total_planning_seconds": 0.00837266698363237,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 1,
+          "planning_seconds": 0.003570250002667308,
+          "turns": 40,
+          "coverage_cells": 128,
+          "moves": 128
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0022388749930541962,
+          "turns": 26,
+          "coverage_cells": 116,
+          "moves": 116
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.00253108300967142,
+          "turns": 16,
+          "coverage_cells": 128,
+          "moves": 128
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T16:04:54",
+    "run_file": "run_20261016_160454_847454.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.99629007573407,
+      0.1,
+      5.692391364380962
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      6.166666666666666,
+      -12.333333333333334,
+      6.166666666666666
+    ],
+    "balance_objective": 228.16666666666666,
+    "stc_metrics": {
+      "total_planning_seconds": 0.00936545801232569,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.004362832987681031,
+          "turns": 34,
+          "coverage_cells": 172,
+          "moves": 172
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0005757499893661588,
+          "turns": 4,
+          "coverage_cells": 24,
+          "moves": 24
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.004398290999233723,
+          "turns": 26,
+          "coverage_cells": 172,
+          "moves": 172
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T17:20:42",
+    "run_file": "run_20261016_172042_873013.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.99629007573407,
+      0.1,
+      5.692391364380962
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      6.166666666666666,
+      -12.333333333333334,
+      6.166666666666666
+    ],
+    "balance_objective": 228.16666666666666,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014248124993173406,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.00596591699286364,
+          "turns": 34,
+          "coverage_cells": 172,
+          "moves": 172
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0009278750221710652,
+          "turns": 4,
+          "coverage_cells": 24,
+          "moves": 24
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.007310000015422702,
+          "turns": 26,
+          "coverage_cells": 172,
+          "moves": 172
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T17:48:02",
+    "run_file": "run_20261016_174802_999485.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.99629007573407,
+      0.1,
+      5.692391364380962
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      6.166666666666666,
+      -12.333333333333334,
+      6.166666666666666
+    ],
+    "balance_objective": 228.16666666666666,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014136667014099658,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.0060360000061336905,
+          "turns": 34,
+          "coverage_cells": 172,
+          "moves": 172
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0009759590029716492,
+          "turns": 4,
+          "coverage_cells": 24,
+          "moves": 24
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.007081250019837171,
+          "turns": 26,
+          "coverage_cells": 172,
+          "moves": 172
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T17:52:42",
+    "run_file": "run_20261016_175242_971997.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.99629007573407,
+      0.1,
+      5.692391364380962
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      6.166666666666666,
+      -12.333333333333334,
+      6.166666666666666
+    ],
+    "balance_objective": 228.16666666666666,
+    "stc_metrics": {
+      "total_planning_seconds": 0.01408983301371336,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.00630704200011678,
+          "turns": 34,
+          "coverage_cells": 172,
+          "moves": 172
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0009376659872941673,
+          "turns": 4,
+          "coverage_cells": 24,
+          "moves": 24
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.006802332994993776,
+          "turns": 26,
+          "coverage_cells": 172,
+          "moves": 172
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T17:53:10",
+    "run_file": "run_20261016_175310_689857.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.99629007573407,
+      0.1,
+      5.692391364380962
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      6.166666666666666,
+      -12.333333333333334,
+      6.166666666666666
+    ],
+    "balance_objective": 228.16666666666666,
+    "stc_metrics": {
+      "total_planning_seconds": 0.013470458012307063,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.005762832995969802,
+          "turns": 34,
+          "coverage_cells": 172,
+          "moves": 172
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0009292920003645122,
+          "turns": 4,
+          "coverage_cells": 24,
+          "moves": 24
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.006734875001711771,
+          "turns": 26,
+          "coverage_cells": 172,
+          "moves": 172
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T17:54:13",
+    "run_file": "run_20261016_175413_097564.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        8
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      45.0,
+      45.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      5.692391364380963,
+      0.17567309343087448
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      19.5,
+      -19.5
+    ],
+    "balance_objective": 760.5,
+    "stc_metrics": {
+      "total_planning_seconds": 0.013930499990237877,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.012770791974617168,
+          "turns": 40,
+          "coverage_cells": 340,
+          "moves": 340
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0011203340254724026,
+          "turns": 4,
+          "coverage_cells": 28,
+          "moves": 28
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T17:54:31",
+    "run_file": "run_20261016_175431_095618.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        8
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      45.0,
+      45.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      5.692391364380963,
+      0.17567309343087448
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      19.5,
+      -19.5
+    ],
+    "balance_objective": 760.5,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014725666987942532,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.013545957976020873,
+          "turns": 40,
+          "coverage_cells": 340,
+          "moves": 340
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0011374999885447323,
+          "turns": 4,
+          "coverage_cells": 28,
+          "moves": 28
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:06:30",
+    "run_file": "run_20261016_180630_445566.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        9,
+        7
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      29.666666666666664,
+      29.666666666666664,
+      29.666666666666664
+    ],
+    "term_thr": 1,
+    "metric_weights": [
+      4.99629007573407,
+      0.1,
+      5.692391364380962
+    ],
+    "tuning_iterations": 30,
+    "balance_j": [
+      6.166666666666666,
+      -12.333333333333334,
+      6.166666666666666
+    ],
+    "balance_objective": 228.16666666666666,
+    "stc_metrics": {
+      "total_planning_seconds": 0.013539958017645404,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.005680333997588605,
+          "turns": 34,
+          "coverage_cells": 172,
+          "moves": 172
+        },
+        {
+          "robot_id": 1,
+          "mode": 0,
+          "planning_seconds": 0.0009228750132024288,
+          "turns": 4,
+          "coverage_cells": 24,
+          "moves": 24
+        },
+        {
+          "robot_id": 2,
+          "mode": 2,
+          "planning_seconds": 0.006886875024065375,
+          "turns": 26,
+          "coverage_cells": 172,
+          "moves": 172
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:08:33",
+    "run_file": "run_20261016_180833_611386.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014172666997183114,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014143125008558854,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:08:54",
+    "run_file": "run_20261016_180854_365591.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        2
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014453624986344948,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014425208006286994,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:09:08",
+    "run_file": "run_20261016_180908_862060.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.025223208009265363,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.025172749999910593,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:09:43",
+    "run_file": "run_20261016_180943_119967.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014236041984986514,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014205125014996156,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:11:32",
+    "run_file": "run_20261016_181132_635331.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.01713583298260346,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.01710637501673773,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:12:43",
+    "run_file": "run_20261016_181243_315754.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014483583014225587,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014455041993642226,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:13:01",
+    "run_file": "run_20261016_181301_320466.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      90.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014188792003551498,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.014156041987007484,
+          "turns": 44,
+          "coverage_cells": 364,
+          "moves": 364
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:13:40",
+    "run_file": "run_20261016_181340_442001.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        3,
+        2
+      ]
+    ],
+    "desireable_assign": [
+      90.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.01390141699812375,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.013872292009182274,
+          "turns": 44,
+          "coverage_cells": 364,
+          "moves": 364
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:14:18",
+    "run_file": "run_20261016_181418_179809.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014361750014359131,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014333666011225432,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:15:12",
+    "run_file": "run_20261016_181512_174105.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014265875011915341,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014230542001314461,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:15:28",
+    "run_file": "run_20261016_181528_625615.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [],
+    "desireable_assign": [
+      99.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.015142416988965124,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.015111999993678182,
+          "turns": 40,
+          "coverage_cells": 400,
+          "moves": 400
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:15:40",
+    "run_file": "run_20261016_181540_269301.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [],
+    "desireable_assign": [
+      99.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.015319333993829787,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.01528762499219738,
+          "turns": 40,
+          "coverage_cells": 400,
+          "moves": 400
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:15:46",
+    "run_file": "run_20261016_181546_001069.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [],
+    "desireable_assign": [
+      99.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014878334011882544,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.014845958008663729,
+          "turns": 40,
+          "coverage_cells": 400,
+          "moves": 400
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:16:05",
+    "run_file": "run_20261016_181605_786289.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      91.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.014189791021635756,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.014160582999465987,
+          "turns": 40,
+          "coverage_cells": 368,
+          "moves": 368
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:16:34",
+    "run_file": "run_20261016_181634_055186.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      83.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.016687209019437432,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.01666037499671802,
+          "turns": 40,
+          "coverage_cells": 336,
+          "moves": 336
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:17:27",
+    "run_file": "run_20261016_181727_659804.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      83.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.013711417006561533,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.013680915988516062,
+          "turns": 40,
+          "coverage_cells": 336,
+          "moves": 336
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:18:59",
+    "run_file": "run_20261016_181859_463840.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      75.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.012178500008303672,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 3,
+          "planning_seconds": 0.012153874995419756,
+          "turns": 40,
+          "coverage_cells": 304,
+          "moves": 304
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:19:35",
+    "run_file": "run_20261016_181935_012188.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      67.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.008983667008578777,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.008959166996646672,
+          "turns": 40,
+          "coverage_cells": 272,
+          "moves": 272
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:21:30",
+    "run_file": "run_20261016_182130_476271.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        8,
+        2
+      ],
+      [
+        8,
+        3
+      ],
+      [
+        8,
+        4
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        8,
+        6
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        8,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      27.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.005685332987923175,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.00566291599534452,
+          "turns": 10,
+          "coverage_cells": 112,
+          "moves": 112
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-16T18:21:40",
+    "run_file": "run_20261016_182140_501362.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.004877125000348315,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.0048587920027785,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-20T13:20:11",
+    "run_file": "run_20261020_132011_062426.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.005150083015905693,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.0051336670003365725,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-20T13:40:57",
+    "run_file": "run_20261020_134057_663576.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.005000375007512048,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.00498533301288262,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-10-20T15:37:37",
+    "run_file": "run_20261020_153737_643539.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.005321125005139038,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.005303415993694216,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    },
+    "computational_memory_analysis": {
+      "grid_cells": 100,
+      "robot_count": 1,
+      "numeric_matrix_count": 2,
+      "numeric_matrix_slots": 200,
+      "idealized_float64_matrix_bytes": 1600,
+      "python_matrix_bytes": 9424,
+      "iteration_count": 1,
+      "tuning_elapsed_seconds": 0.005404583993367851,
+      "peak_traced_iteration_bytes": 16712,
+      "matrix_space_complexity": "O(beta * robots * grid_cells), beta=2",
+      "tuner_time_complexity": "O(iterations * robots * grid_cells^2) worst case"
+    }
+  },
+  {
+    "timestamp": "2026-10-20T15:38:05",
+    "run_file": "run_20261020_153805_059244.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.005673709005350247,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.0056508750130888075,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    },
+    "computational_memory_analysis": {
+      "grid_cells": 100,
+      "robot_count": 1,
+      "numeric_matrix_count": 2,
+      "numeric_matrix_slots": 200,
+      "idealized_float64_matrix_bytes": 1600,
+      "python_matrix_bytes": 9424,
+      "iteration_count": 1,
+      "tuning_elapsed_seconds": 0.006007167015923187,
+      "peak_traced_iteration_bytes": 16712,
+      "matrix_space_complexity": "O(beta * robots * grid_cells), beta=2",
+      "tuner_time_complexity": "O(iterations * robots * grid_cells^2) worst case"
+    }
+  },
+  {
+    "timestamp": "2026-10-21T10:02:46",
+    "run_file": "run_20261021_100246_036412.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.006214457971509546,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.00619433302199468,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    },
+    "computational_memory_analysis": {
+      "grid_cells": 100,
+      "robot_count": 1,
+      "numeric_matrix_count": 2,
+      "numeric_matrix_slots": 200,
+      "idealized_float64_matrix_bytes": 1600,
+      "python_matrix_bytes": 9424,
+      "iteration_count": 1,
+      "tuning_elapsed_seconds": 0.005837208009324968,
+      "peak_traced_iteration_bytes": 16712,
+      "matrix_space_complexity": "O(beta * robots * grid_cells), beta=2",
+      "tuner_time_complexity": "O(iterations * robots * grid_cells^2) worst case"
+    }
+  },
+  {
+    "timestamp": "2026-10-23T13:56:14",
+    "run_file": "run_20261023_135614_284082.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.0034490000107325613,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.0034374999813735485,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    },
+    "computational_memory_analysis": {
+      "grid_cells": 100,
+      "robot_count": 1,
+      "numeric_matrix_count": 2,
+      "numeric_matrix_slots": 200,
+      "idealized_float64_matrix_bytes": 1600,
+      "python_matrix_bytes": 9424,
+      "iteration_count": 1,
+      "tuning_elapsed_seconds": 0.003013417008332908,
+      "peak_traced_iteration_bytes": 16648,
+      "matrix_space_complexity": "O(beta * robots * grid_cells), beta=2",
+      "tuner_time_complexity": "O(iterations * robots * grid_cells^2) worst case"
+    }
+  },
+  {
+    "timestamp": "2026-10-23T13:56:51",
+    "run_file": "run_20261023_135651_912689.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.004357416997663677,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.0043405829928815365,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    },
+    "computational_memory_analysis": {
+      "grid_cells": 100,
+      "robot_count": 1,
+      "numeric_matrix_count": 2,
+      "numeric_matrix_slots": 200,
+      "idealized_float64_matrix_bytes": 1600,
+      "python_matrix_bytes": 9424,
+      "iteration_count": 1,
+      "tuning_elapsed_seconds": 0.0032652090303599834,
+      "peak_traced_iteration_bytes": 16648,
+      "matrix_space_complexity": "O(beta * robots * grid_cells), beta=2",
+      "tuner_time_complexity": "O(iterations * robots * grid_cells^2) worst case"
+    }
+  },
+  {
+    "timestamp": "2026-10-23T15:46:27",
+    "run_file": "run_20261023_154627_364487.json",
+    "rows": 10,
+    "cols": 10,
+    "robot_positions": [
+      [
+        0,
+        0
+      ]
+    ],
+    "obstacle_positions": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        2,
+        9
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        3,
+        8
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        5,
+        8
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        2
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        6,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        9
+      ],
+      [
+        7,
+        2
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ]
+    ],
+    "desireable_assign": [
+      35.0
+    ],
+    "term_thr": 0,
+    "metric_weights": [
+      1.0
+    ],
+    "tuning_iterations": 1,
+    "balance_j": [
+      0.0
+    ],
+    "balance_objective": 0.0,
+    "stc_metrics": {
+      "total_planning_seconds": 0.004982457961887121,
+      "robots": [
+        {
+          "robot_id": 0,
+          "mode": 0,
+          "planning_seconds": 0.0049606250249780715,
+          "turns": 40,
+          "coverage_cells": 144,
+          "moves": 144
+        }
+      ]
+    },
+    "computational_memory_analysis": {
+      "grid_cells": 100,
+      "robot_count": 1,
+      "numeric_matrix_count": 2,
+      "numeric_matrix_slots": 200,
+      "idealized_float64_matrix_bytes": 1600,
+      "python_matrix_bytes": 9424,
+      "iteration_count": 1,
+      "tuning_elapsed_seconds": 0.005577916977927089,
+      "peak_traced_iteration_bytes": 16648,
+      "matrix_space_complexity": "O(beta * robots * grid_cells), beta=2",
+      "tuner_time_complexity": "O(iterations * robots * grid_cells^2) worst case"
+    }
   }
 ]
